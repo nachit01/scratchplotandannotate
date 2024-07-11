@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from Front  import Front
 from pathlib import Path
 import os
-from CVData import CVData
+from FrontCVData import FrontCVData
 import pandas as pd
 
 
@@ -12,25 +12,9 @@ import pandas as pd
 # f.displayannotatedfront()
 
 
-data = CVData()
-# data.mergingfrontdata()
-data.plotfrontmergeddata()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # print("-----")
+frontsdata = FrontCVData(grades=["B","C"])
+# data.mergefrontdataonegrade()
+# data.saveannotatedimagesbygrade("B")
+frontsdata.mergefrontdataallgivengrades()
+frontsdata.plotfrontmergeddata()
+frontsdata.saveallannotatedimagesbygrade()

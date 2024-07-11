@@ -64,7 +64,6 @@ class Front:
         annotatedimagename = self.imagepath.replace("Display.jpg", "Display_annotated.jpg")
 
         for index, row in self.dfcsvdata.iloc[:9].iterrows():
-            print(f"index:{index},--- {row["region"]}")
             boxes = [(row[f"a{i}"],row[f"x{i}"],row[f"y{i}"]) for i in range(1,8) if row[f"a{i}"] > 0 ]
             for bx in boxes:
                 a,x,y = bx
