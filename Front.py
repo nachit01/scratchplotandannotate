@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 class Front:
-    def __init__(self,dfcsvdata=[],csvfile= r"evo_images_CSV\Front.csv",imagepath = r"evo_images_CSV\Display.jpg"):
+    def __init__(self,csvfile= r"evo_images_CSV\Front.csv",imagepath = r"evo_images_CSV\Display.jpg"):
         self.csvfile =csvfile
         self.imagepath = imagepath
         self.csvfilenew = self.correctcsv()
@@ -58,6 +58,8 @@ class Front:
         with open(correctedCSVName, mode='w') as file:
             file.write(text)
         return correctedCSVName
+
+
     def annotateFront(self,scale=4):
         image = cv2.imread(self.imagepath)
         image_copy = image.copy()
@@ -68,8 +70,8 @@ class Front:
             for bx in boxes:
                 a,x,y = bx
                 utils.AnnotateOnImage(image_copy,top_left=(x/scale,y/scale),area=a)
-
         cv2.imwrite(annotatedimagename, image_copy)
+
     def displayannotatedfront(self):
         self.annotateFront()
         # Display the image in a window

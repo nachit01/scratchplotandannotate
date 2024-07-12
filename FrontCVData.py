@@ -19,12 +19,6 @@ class FrontCVData:
         self.mergedfilename = rootdatapath+r"\\" +mergedfilename
         self.grades = grades
 
-
-
-
-
-
-
     def getimeisfromtxt(self, grade="B"):
         file = open(self.imeistxtgardesdict[grade], "r")
         content = file.read()

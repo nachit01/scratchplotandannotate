@@ -5,138 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce9c4070-f1a1-44cc-bdfc-ccd12a034b59" name="Changes" comment="good for grade B">
-      <change afterPath="$PROJECT_DIR$/FrontCVData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Front_new.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Front_new.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 0/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 1/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Front_new.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Front_new.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Front_new.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Front_new.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Back.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Bottom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Display.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Front.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Front_new.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Housing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Left.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Long.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Right.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Short.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/merged_front_data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CVDataAnalysisi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Phone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Side.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CVData.py" beforeDir="false" afterPath="$PROJECT_DIR$/CVData - Copy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CVData - Copy.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Front.py" beforeDir="false" afterPath="$PROJECT_DIR$/Front.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontCVData.py" beforeDir="false" afterPath="$PROJECT_DIR$/FrontCVData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/351884703360489/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884703360489/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/351884707400653/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884707400653/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/351884709167516/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709167516/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/351884709898813/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/352990483035255/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/352990483035255/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/352990486160415 - 3/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/352990486160415 - 3/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/352990486410638/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/352990486410638/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/352990488930492/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/352990488930492/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/352990489271854/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/352990489271854/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/355980282645096/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980282645096/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/355980284850207/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980284850207/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/355980287734416/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624696101233 - 2/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698357403/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/357624698426992/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/357624698426992/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/358805900034513/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/358805900034513/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/358900783168288/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783168288/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900783354714 - 0/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/358900786611680 - 0/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/359646705422001/Front_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/Front_grade_A_imeis.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/Front_grade_B_imeis.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/Front_grade_C_imeis.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/Front_grade_D_imeis.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,15 +69,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.main.executor": "Run",
+    "Python.main.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/anachit/OneDrive - Communications Test Design, Inc/Documents/CTDI/EVO/ScratchesAnnotations",
     "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anachit\OneDrive - Communications Test Design, Inc\Documents\CTDI\EVO\ScratchesAnnotations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anachit\OneDrive - Communications Test Design, Inc\Documents\CTDI\EVO\ScratchesAnnotations" />
     </key>
@@ -248,5 +151,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="good for grade B" />
     <option name="LAST_COMMIT_MESSAGE" value="good for grade B" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Side.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Side.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
