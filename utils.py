@@ -1,5 +1,4 @@
 import cv2
-import pyautogui
 import math
 
 def AnnotateOnImage(img, top_left= (0, 0),area=100,color=(0,255,0),thickness=2):

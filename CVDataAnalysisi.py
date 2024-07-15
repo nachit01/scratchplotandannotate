@@ -11,7 +11,7 @@ class AllPhonesSidesCVData:
     GRADES = ["A","B","C","D"]
     SIDES = ['front','back','left','right','top','bottom']
     CSVFILENAMESBYSIDE ={"front":"Front.csv","back":"Back.csv","left":"long.csv","right":"long.csv","top":"Short.csv","bottom":"Short.csv"}
-    IMAGESFILENAMESBYSIDE ={"front":"Diaplsy.jpg","back":"Back.jpg","left":"Left.jpg","right":"Right.jpg","top":"Top.jpg","bottom":"Bottom.jpg"}
+    IMAGESFILENAMESBYSIDE ={"front":"Display.jpg","back":"Housing.jpg","left":"Left.jpg","right":"Right.jpg","top":"Top.jpg","bottom":"Bottom.jpg"}
 
     D1D9REGIONS = [f"D{i}" for i in range(1, 10)]  # front
     H1H9REGIONS = [f"H{i}" for i in range(1, 10)]  # back
@@ -47,7 +47,7 @@ class AllPhonesSidesCVData:
                 for imeigrade in sidegradeimeislist:
                     newside = Side(sidename=side,rootpath=self.rootdatapath,sideimei=imeigrade,
                                    sidecsvfile= AllPhonesSidesCVData.CSVFILENAMESBYSIDE[side],
-                                   sideimagename = f"{side.capitalize()}.jpg"
+                                   sideimagename = AllPhonesSidesCVData.IMAGESFILENAMESBYSIDE[side]
                                    ,sideregiongroup=AllPhonesSidesCVData.REGIONGROUPSDICT[side],manualgrade=grade)
                     self.allsidesdict[side].append(newside)
 
@@ -79,9 +79,12 @@ class AllPhonesSidesCVData:
         imeisubdirscountdict = {imei: int(pdseriessorteddirectories.str.contains(imei).sum()) for imei in imeis}
         for imei, count in imeisubdirscountdict.items():
             if count > 1:
-                sorteddirectories.remove(f"{datadirectory}\\{imei}")
+                print(datadirectory / imei)
+                print(sorteddirectories[0])
+                sorteddirectories.remove(f"{datadirectory}/{imei}")
+
                 for j in range(count - 2):
-                    sorteddirectories.remove(f"{datadirectory}\\{imei} - {j}")
+                    sorteddirectories.remove(f"{datadirectory}/{imei} - {j}")
         cleanedimeis = [Path(dir).name for dir in sorteddirectories ]
         return cleanedimeis
 
@@ -105,14 +108,16 @@ class AllPhonesSidesCVData:
                     sorteddirectories.remove(f"{datadirectory}\\{imei} - {j}")
         return sorteddirectories
 
-    def mergeeachsidetocsvfiles(self):
-        for side in AllPhonesSidesCVData.SIDES:
+    def mergeeachsidetoitscsvfile(self):
+        #front .....bottom side
+        for sidename in AllPhonesSidesCVData.SIDES:
             df = pd.DataFrame()
-            sidelist = self.allsidesdict[side]
+            sidelist = self.allsidesdict[sidename]
+            #sides in list of AllPhonesSidesCVData
             for side in sidelist:
                 side.annotateside()
-                df = pd.concat([df,side.dfcsvdata],ignore_index=True)
-            df.to_csv(self.wheretosavemergedsidesdict[side],index=False, header=True)
+                df = pd.concat([df,side.dfsidecsvdata],ignore_index=True)
+            df.to_csv(self.wheretosavemergedsidesdict[sidename],index=False, header=True)
 
 
 

@@ -23,6 +23,9 @@ class Side:
         self.sideannotatedimagename = f"{self.sideimagename[:-4]}_annotated{self.sideimagename[-4:]}"
         self.sidecurrentimeifolder = self.siderootpath / Side.DATAFOLDERNAME / self.sideimei
         self.correctcsv()
+        # TODO if rerion is left right or top or bottom, get only L... R.... T... B... otherwise annotate Left will take values of
+        # TODO right when annotating
+        # TODO filter for Lx Rx
         self.dfsidecsvdata = pd.read_csv( self.sidecurrentimeifolder/ self.sidecsvfilenew, on_bad_lines='warn')
         self.dfsidecsvdata.insert(0, column="imei", value=self.sideimei)
         # # add grade B column

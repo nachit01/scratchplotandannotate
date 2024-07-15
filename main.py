@@ -19,7 +19,7 @@ from CVDataAnalysisi import AllPhonesSidesCVData
 
 a = AllPhonesSidesCVData()
 a.populateallphonessides()
-a.mergeeachsidetocsvfiles()
+a.mergeeachsidetoitscsvfile()
 print()
 
 
