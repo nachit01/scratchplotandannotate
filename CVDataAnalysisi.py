@@ -15,12 +15,14 @@ class AllPhonesSidesCVData:
 
     D1D9REGIONS = [f"D{i}" for i in range(1, 10)]  # front
     H1H9REGIONS = [f"H{i}" for i in range(1, 10)]  # back
-    L1L7REGIONS = [[f"L{i}" for i in range(1, 7)], "L7 Left SIM"]  # left
+    L1L7REGIONS = ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7 Left SIM']  # left
     R1R5REGIONS = [f"R{i}" for i in range(1, 6)]  # right
     T1R4REGIONS = [f"T{i}" for i in range(1, 5)]  # top
-    B1B3REGIONS = [f"T{i}" for i in range(1, 4)]  # bottom
+    B1B3REGIONS = [f"B{i}" for i in range(1, 4)]  # bottom
     REGIONGROUPSDICT ={"front":D1D9REGIONS,"back":H1H9REGIONS,"left":L1L7REGIONS,"right":R1R5REGIONS,"top":T1R4REGIONS,
                        "bottom":B1B3REGIONS}
+    PATHALLANNOTATEDIMAGES = Path(r"all_annotated_images")
+    PATHMANUALLYGRADEDCSV = Path(r"manually_graded_phones.csv")
 
     def __init__(self,rootdatapath=r"evo_images_CSV",imeistxtgardesdict=None,mergedfilename=r"merged_front_data.csv",grades=None):
         self.rootdatapath = Path(".").cwd() / rootdatapath
@@ -35,6 +37,7 @@ class AllPhonesSidesCVData:
                                           "right":self.rootdatapath / "right_all_phones_merged.csv",
                                           "top":self.rootdatapath / "top_all_phones_merged.csv",
                                             "bottom":self.rootdatapath / "bottom_all_phones_merged.csv"}
+        self.populateallphonessides()
 
 
     def populateallphonessides(self):
@@ -79,12 +82,10 @@ class AllPhonesSidesCVData:
         imeisubdirscountdict = {imei: int(pdseriessorteddirectories.str.contains(imei).sum()) for imei in imeis}
         for imei, count in imeisubdirscountdict.items():
             if count > 1:
-                print(datadirectory / imei)
-                print(sorteddirectories[0])
-                sorteddirectories.remove(f"{datadirectory}/{imei}")
+                sorteddirectories.remove(f"{datadirectory}\\{imei}")
 
                 for j in range(count - 2):
-                    sorteddirectories.remove(f"{datadirectory}/{imei} - {j}")
+                    sorteddirectories.remove(f"{datadirectory}\\{imei} - {j}")
         cleanedimeis = [Path(dir).name for dir in sorteddirectories ]
         return cleanedimeis
 
@@ -162,57 +163,69 @@ class AllPhonesSidesCVData:
         dfmerged.to_csv(self.mergedfilename,index=False, header=True)
 
 
-    def plotfrontmergeddata(self,mergedfilename=r"evo_images_CSV\merged_front_data.csv"):
+    def plotfrontmergeddata(self,sides=None):
         #region names
         d1d9regions = [f"D{i}" for i in range(1,10)]
         #areas names
         areanames = [f"a{i}" for i in range(1, 11)]
 
-        #read all grades merged data
-        dfmergeddatagardeB = pd.read_csv(mergedfilename)
 
-        #get only D1..D9 data
-        dfd1d9data = pd.DataFrame([row for _,row in dfmergeddatagardeB.iterrows() if row['region'].strip() in d1d9regions]).reset_index(drop=True)
-        #flatten
-        dfd1d9dataflattned = pd.melt(frame=dfd1d9data,id_vars=['imei','grade','region'] ,value_vars=areanames, var_name='areas', value_name='values')
-        #replace zeros with nan to not plot them
-        dfd1d9dataflattnednonzeroes =  pd.DataFrame([row for _,row in dfd1d9dataflattned.iterrows() if row['values'] > 0]).reset_index(drop=True)
+        if sides == None:
+            sides = AllPhonesSidesCVData.SIDES
 
-        # get ranges
-        dfgradeB = pd.DataFrame([row for i,row in dfd1d9dataflattnednonzeroes.iterrows() if row['grade'] == 'B'])
-        # dfgradeC =
-        idxmin = dfd1d9dataflattnednonzeroes['values'].idxmin()
-        idxmax = dfd1d9dataflattnednonzeroes['values'].idxmax()
-        print(f"upperlimit Grade :\n{dfd1d9dataflattnednonzeroes.iloc[idxmax]}")
-        print(f"lowerlimit Grade :\n{dfd1d9dataflattnednonzeroes.iloc[idxmin]}")
+        for side in sides:
+            #read all grades merged data for side
+            dfmergeddatagarde = pd.read_csv(self.wheretosavemergedsidesdict[side])
+            #get side day
+            sideregiondata = pd.DataFrame([row for _,row in dfmergeddatagarde.iterrows() if row['region'].strip() in
+                                       AllPhonesSidesCVData.REGIONGROUPSDICT[side]]).reset_index(drop=True)
+            if side == 'bottom':
+                print(dfmergeddatagarde.columns)
+            #flatten
+            sideregiondataflattned = pd.melt(frame=sideregiondata,id_vars=['imei','grade','region'] ,
+                                             value_vars=Side.AREASCOLUMNSNAMES, var_name='areas', value_name='values')
+            #replace zeros with nan to not plot them
+            sideregiondataflattnednonzeroes =  pd.DataFrame([row for _,row in sideregiondataflattned.iterrows() if row['values'] > 0]).reset_index(drop=True)
 
-        #plot
-        dfd1d9dataflattnednonzeroes.plot(kind="scatter",x='values',y='grade',grid=True,legend=True,c='blue',s=50)
-        plt.title("Evo3 Grading Classification")
+            idxmin = sideregiondataflattnednonzeroes['values'].idxmin()
+            idxmax = sideregiondataflattnednonzeroes['values'].idxmax()
+            print(f"upperlimit Grade :\n{sideregiondataflattnednonzeroes.iloc[idxmax]}")
+            print(f"lowerlimit Grade :\n{sideregiondataflattnednonzeroes.iloc[idxmin]}")
+
+            #plot
+            sideregiondataflattnednonzeroes.plot(kind="scatter",x='values',y='grade',grid=True,legend=True,c='blue',s=50)
+            plt.title(f"Side:{side}")
+
+
+
+
+
+
         # Set x and y axis limits
-        plt.xlim(0, 15000)  # Set limits for x-axis
+        # plt.xlim(0, 15000)  # Set limits for x-axis
 
         plt.grid(True)
         plt.show()
 
 
     def saveannotatedimagesbygrade(self,grade="B"):
-        gradeimeis = self.getimeisfromtxt(grade)
-        pathsbygradedirs = self.getimeifolders(grade)
-        pathannotatedimagesbygrade = Path(self.rootdatapath+f"/all_annotated_images/{grade}")
-        #create saving folders by grade
-        pathannotatedimagesbygrade.mkdir(parents=True,exist_ok=True)
+        for sidename in AllPhonesSidesCVData.SIDES:
+            if len(self.allsidesdict[sidename]) == 0:
+                self.populateallphonessides()
+            for i,side in enumerate(self.allsidesdict[sidename]):
+                source = side.sidecurrentimeifolder /  side.sideannotatedimagename
+                annotatedgradeimei = f"{side.sideannotatedimagename[:-4]}_{side.sideimei}_{side.manualgrade}{side.sideannotatedimagename[-4:]}"
+                destination = self.rootdatapath / AllPhonesSidesCVData.PATHALLANNOTATEDIMAGES / annotatedgradeimei
+                shutil.copy2(source, destination)
 
-        annotatedimagedefaultname = "Display_annotated.jpg"
-        for dir in pathsbygradedirs:
-            imagename = str(Path(dir).name + "Display_annotated.jpg")
-            source = dir + f"/{annotatedimagedefaultname}"
-            destination= str(pathannotatedimagesbygrade) + f"/ - {imagename}"
-            shutil.copy2(source,destination)
+    def createimeistxtfromcsv(self):
+        dfmanuallygradedcsv = pd.read_csv(self.rootdatapath / r"imeis_grades_txt_files" / AllPhonesSidesCVData.PATHMANUALLYGRADEDCSV)
+        for side in AllPhonesSidesCVData.SIDES:
+            for grade in AllPhonesSidesCVData.GRADES:
+                bysidebygradetxtimeispath = self.txtmanualgradingfiles / side / f"{side}_grade_{grade}_imeis.txt"
+                sideandgradeimeislist = dfmanuallygradedcsv[(dfmanuallygradedcsv[side] == grade)]['imei']
+                sideandgradeimeislist.to_csv(bysidebygradetxtimeispath,sep='\t',index=False,header=False)
 
-    def saveallannotatedimagesbygrade(self):
-        for grade in self.grades:
-            self.saveannotatedimagesbygrade(grade=grade)
 
 
 
