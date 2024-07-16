@@ -11,6 +11,8 @@ from pathlib import Path
 class Side:
     DATAFOLDERNAME = r"data"
     AREASCOLUMNSNAMES = [f"a{i}" for i in range(1, 11)]
+    SCRATCHTYPEAREAEDGES  = [100, 1100, 2500, 5000, 7000, 9000]  # Allowed defect of area
+
 
     def __init__(self,sidename=None,rootpath=r"evo_images_CSV",sideimei=None,sidecsvfile= r"Front.csv",sideimagename = r"Display.jpg",sideregiongroup=None,manualgrade="B"):
         self.sidename = sidename
@@ -24,12 +26,15 @@ class Side:
         self.sideannotatedimagename = f"{self.sideimagename[:-4]}_annotated{self.sideimagename[-4:]}"
         self.sidecurrentimeifolder = self.siderootpath / Side.DATAFOLDERNAME / self.sideimei
         self.readfilteredcsvdata()
+        self.sidelightscratchescount = 0
+        self.sidedeepscratchescount = 0
+        self.setscratchescount()
+
+
 
 
     def readfilteredcsvdata(self):
         self.correctcsv()
-        # TODO L7 SIM row is not taken into consideration
-
         self.dfsidecsvdata = pd.read_csv(self.sidecurrentimeifolder / self.sidecsvfilenew, on_bad_lines='warn')
         self.dfsidecsvdata.insert(0, column="imei", value=self.sideimei)
         # # add grade B column
@@ -100,6 +105,12 @@ class Side:
         with open(str(correctedcsvpath), mode='w') as file:
             file.write(text)
 
+    def setscratchescount(self):
+        df = self.dfsidecsvdata
+        self.sidelightscratchescount = ((df[Side.AREASCOLUMNSNAMES] >= Side.SCRATCHTYPEAREAEDGES[0]) &
+                                        (df[Side.AREASCOLUMNSNAMES] < Side.SCRATCHTYPEAREAEDGES[1])).sum().sum()#first sum for df second for series
+        self.sidedeepscratchescount  = ((df[Side.AREASCOLUMNSNAMES] >= Side.SCRATCHTYPEAREAEDGES[1])).sum().sum()
+
 
 
     def annotateside(self,scale=4):
@@ -108,8 +119,6 @@ class Side:
         #read image
         image = cv2.imread(imagepath)
         image_copy = image.copy()
-        if(self.sideimei == "355980282645096"):
-            print(self.sideimei)
 
         #filter data by its side's region
         dfsideregions = self.dfsidecsvdata[ (self.dfsidecsvdata['region'].isin(self.sideregiongroup))]

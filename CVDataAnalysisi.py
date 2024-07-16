@@ -37,6 +37,13 @@ class AllPhonesSidesCVData:
                                           "right":self.rootdatapath / "right_all_phones_merged.csv",
                                           "top":self.rootdatapath / "top_all_phones_merged.csv",
                                             "bottom":self.rootdatapath / "bottom_all_phones_merged.csv"}
+
+        self.wheretosavemergedsidesLSDSdict = {"front": self.rootdatapath / "lsdsmerged"/"front_all_lsds_merged.csv",
+                                           "back": self.rootdatapath / "lsdsmerged"/"back_all_lsds_merged.csv",
+                                           "left": self.rootdatapath / "lsdsmerged"/"left_all_lsds_merged.csv",
+                                           "right": self.rootdatapath / "lsdsmerged"/"right_all_lsds_merged.csv",
+                                           "top": self.rootdatapath / "lsdsmerged"/"top_all_lsds_merged.csv",
+                                           "bottom": self.rootdatapath / "lsdsmerged"/"bottom_all_lsds_merged.csv"}
         self.populateallphonessides()
 
 
@@ -120,56 +127,29 @@ class AllPhonesSidesCVData:
                 df = pd.concat([df,side.dfsidecsvdata],ignore_index=True)
             df.to_csv(self.wheretosavemergedsidesdict[sidename],index=False, header=True)
 
+    def mergeelsdstocsvfile(self):
+        #front .....bottom side
+        for sidename in AllPhonesSidesCVData.SIDES:
+            sidelsdsdata = []
+            #get all front Sides created
+            sidelist = self.allsidesdict[sidename]
+            #sides in list of AllPhonesSidesCVData
+            for side in sidelist:
+                rowdata = {
+                    'imei': side.sideimei,
+                    'grade': side.manualgrade,
+                    'lscount': side.sidelightscratchescount,
+                    'dscount': side.sidedeepscratchescount,
+                }
+                sidelsdsdata.append(rowdata)
+            #create df
+            df = pd.DataFrame(sidelsdsdata)
+            df.to_csv(self.wheretosavemergedsidesLSDSdict[sidename],index=False, header=True)
 
 
 
 
-
-####D1 crack not read because it has a weird length, ask toshika.
-    def mergefrontdataonegrade(self,grade="B",):
-        dfmerged = pd.DataFrame()
-        #get dirs list out depending on imeis in imeistxt
-        imeifolderslist  =  self.getimeifolders(grade)
-        #create list of Fronts from the given imeis
-        fronts = []
-        for imeifolder in imeifolderslist:
-            #create fronts. creates also csv new in __init__
-            front = Front(csvfile=f"{imeifolder}\\Front.csv",imagepath=f"{imeifolder}\\Display.jpg")
-            front.annotateFront()
-            fronts.append(front)
-
-
-        #append data to a new CSV file by region D1..D9. add a column "imei"
-        for front in fronts:
-            imeifrompath=str(Path(front.csvfile).parent).split('\\')[-1]
-            front.dfcsvdata.insert(0,column="imei",value=imeifrompath)
-            # # add grade B column
-            front.dfcsvdata.insert(1, column="grade", value=grade)
-            # add grade B column
-            #adding D1...D9
-            dfmerged = pd.concat([dfmerged,front.dfcsvdata.iloc[:9]],ignore_index=True)
-
-        for indexfromd10toenddf,_ in fronts[0].dfcsvdata.iloc[9:].iterrows():
-            #D10...to end
-            newdf = pd.DataFrame([front.dfcsvdata.iloc[indexfromd10toenddf] for front in fronts])
-            dfmerged = pd.concat([dfmerged, newdf],ignore_index=True)
-        return  dfmerged
-
-    def mergefrontdataallgivengrades(self,mergedfilename=r"evo_images_CSV\merged_front_data.csv"):
-        dfmerged = pd.DataFrame()
-        #merge all given grades into one DataFrame
-        for grade in self.grades:
-            dfmerged  = pd.concat([dfmerged,self.mergefrontdataonegrade(grade)],ignore_index=True)
-        dfmerged.to_csv(self.mergedfilename,index=False, header=True)
-
-
-    def plotfrontmergeddata(self,sides=None):
-        #region names
-        d1d9regions = [f"D{i}" for i in range(1,10)]
-        #areas names
-        areanames = [f"a{i}" for i in range(1, 11)]
-
-
+    def plotareaallsidesmergeddata(self,sides=None):
         if sides == None:
             sides = AllPhonesSidesCVData.SIDES
 
@@ -179,33 +159,106 @@ class AllPhonesSidesCVData:
             #get side day
             sideregiondata = pd.DataFrame([row for _,row in dfmergeddatagarde.iterrows() if row['region'].strip() in
                                        AllPhonesSidesCVData.REGIONGROUPSDICT[side]]).reset_index(drop=True)
-            if side == 'bottom':
-                print(dfmergeddatagarde.columns)
+
             #flatten
             sideregiondataflattned = pd.melt(frame=sideregiondata,id_vars=['imei','grade','region'] ,
                                              value_vars=Side.AREASCOLUMNSNAMES, var_name='areas', value_name='values')
             #replace zeros with nan to not plot them
             sideregiondataflattnednonzeroes =  pd.DataFrame([row for _,row in sideregiondataflattned.iterrows() if row['values'] > 0]).reset_index(drop=True)
 
-            idxmin = sideregiondataflattnednonzeroes['values'].idxmin()
-            idxmax = sideregiondataflattnednonzeroes['values'].idxmax()
-            print(f"upperlimit Grade :\n{sideregiondataflattnednonzeroes.iloc[idxmax]}")
-            print(f"lowerlimit Grade :\n{sideregiondataflattnednonzeroes.iloc[idxmin]}")
 
             #plot
             sideregiondataflattnednonzeroes.plot(kind="scatter",x='values',y='grade',grid=True,legend=True,c='blue',s=50)
             plt.title(f"Side:{side}")
-
-
-
-
-
-
         # Set x and y axis limits
         # plt.xlim(0, 15000)  # Set limits for x-axis
 
         plt.grid(True)
         plt.show()
+
+    def plotlightdeepscracthescountsallsidesbygrade(self,sides=None):
+        if sides == None:
+            sides = AllPhonesSidesCVData.SIDES
+        plotboxdict={}
+        for side in sides:
+            #get data for each side from its CSV merged file
+            #read all grades merged data for side
+            dflsds = pd.read_csv(self.wheretosavemergedsidesLSDSdict[side])
+
+            # Replace zeros with NaN
+            # Replace zeros with NaN without using inplace=True
+            dflsds['lscount'] = dflsds['lscount'].replace(0, None)
+            dflsds['dscount'] = dflsds['dscount'].replace(0, None)
+
+            #plot
+            # x1 and x2
+            x1 = dflsds['lscount']
+            x2 = dflsds['dscount']
+            # Categorical data for the y-axis
+            y = dflsds['grade']
+
+            # Create a DataFrame
+            df = pd.DataFrame({
+                'grade': y,
+                'lscount': x1,
+                'dscount': x2,
+            })
+
+            # Create the plot
+            # fig, ax = plt.subplots()
+            fig, (ax, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+
+            # Scatter plot for x1 with y shifted up
+            for label in df['grade'].unique():
+                #plot the lscount column by deviding grade example B to B LS light scratch
+                subset = df[df['grade'] == label]
+                #renaming grade B  for LScount to BLS grade
+                subset['grade'] = subset['grade'].map(lambda y: f'{y} LS')
+                ax.scatter(subset['lscount'], subset['grade'],
+                           label=f'Light scratch', marker='o', alpha=0.7,c='green')
+                # Plot the boxplot on the first subplot (ax1)
+                dfbox1 = subset.rename(columns = {"lscount":f'{label} LS'})
+                # dfbox1.boxplot(f'{label} LS',ax=ax2)
+                plotboxdict[f'{label} LS'] = dfbox1[f'{label} LS']
+
+                #plot the lscount column by deviding grade example B to B LS light scratch
+                subset2 = df[df['grade'] == label]
+                subset2['grade'] = subset2['grade'].map(lambda y: f'{y} DS')
+
+                # renaming grade B  for LScount to BLS grade
+                ax.scatter(subset2['dscount'], subset2['grade'],
+                           label=f'Deep Scracth', marker='x', alpha=0.7,c='red')
+
+                # Plot the boxplot on the first subplot (ax1)
+                dfbox2 = subset.rename(columns={"dscount": f'{label} DS'})
+                plotboxdict[f'{label} DS'] = dfbox2[f'{label} DS']
+                #ax2 params
+                ax2.set_title(r'Boxplot of \textbf{Different Categories}', fontsize=14)
+                ax2.set_xlabel('grade')
+                ax2.set_ylabel('count')
+
+            dfbox = pd.DataFrame(plotboxdict)
+            # Replace NaN values with 0 in the entire DataFrame
+            dfbox.fillna(0,inplace=True)
+            aux = dfbox.mask(dfbox==0)
+            dfbox.mask(dfbox==0).boxplot(ax=ax2)
+
+            #set plot
+            ax.set_xlabel('Light / Deep Scratche counts')
+            ax.set_ylabel('grade')
+
+            #remove duplocate legends
+            # Get current handles and labels
+            handles, labels = ax.get_legend_handles_labels()
+            # Update the legend with new labels
+            ax.legend(handles, labels[:2], title='type of scratches')
+            plt.title(f'deep/light scratches count per grade for {side.upper()}')
+            plt.tight_layout()
+            # Turn on the grid
+            ax.grid(True)
+
+        plt.show()
+
 
 
     def saveannotatedimagesbygrade(self,grade="B"):

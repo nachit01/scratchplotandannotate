@@ -3,24 +3,27 @@ from CVDataAnalysisi import AllPhonesSidesCVData
 
 
 
-
+#init
 a = AllPhonesSidesCVData()
-a.createimeistxtfromcsv()
-a.mergeeachsidetoitscsvfile()
-a.plotfrontmergeddata()
-a.saveannotatedimagesbygrade()
 
+# #get manual grades from csv to txt
+# a.createimeistxtfromcsv()
+#
+# #merge data
+# a.mergeeachsidetoitscsvfile()
+# a.mergeelsdstocsvfile()
 
+#plot
+# a.plotareaallsidesmergeddata()
+a.plotlightdeepscracthescountsallsidesbygrade()
 
-
-
-
-
-
-
-
+#save annotated images (flush manually)
+# a.saveannotatedimagesbygrade()
 
 
 print()
+
+
+
 
 
