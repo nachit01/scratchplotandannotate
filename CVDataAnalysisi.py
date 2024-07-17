@@ -6,6 +6,7 @@ from pathlib import Path
 import shutil
 import numpy  as np
 from Side import Side
+import mplcursors
 
 class AllPhonesSidesCVData:
     GRADES = ["A","B","C","D"]
@@ -168,17 +169,23 @@ class AllPhonesSidesCVData:
 
 
             #plot
-            sideregiondataflattnednonzeroes.plot(kind="scatter",x='values',y='grade',grid=True,legend=True,c='blue',s=50)
+            ax = sideregiondataflattnednonzeroes.plot(kind="scatter",x='values',y='grade',grid=True,legend=True,c='blue',s=50)
             plt.title(f"Side:{side}")
+
+            # Add interactive cursors
+            self.addinteractivehovertoplot(df=sideregiondataflattnednonzeroes,ax=ax,colimei="imei", colregion='region'
+                                           , colareas='areas', colvalues='values')
         # Set x and y axis limits
         # plt.xlim(0, 15000)  # Set limits for x-axis
 
         plt.grid(True)
         plt.show()
 
+
     def plotlightdeepscracthescountsallsidesbygrade(self,sides=None):
         if sides == None:
             sides = AllPhonesSidesCVData.SIDES
+            # sides = ['front']
         plotboxdict={}
         for side in sides:
             #get data for each side from its CSV merged file
@@ -256,10 +263,28 @@ class AllPhonesSidesCVData:
             plt.tight_layout()
             # Turn on the grid
             ax.grid(True)
-
+        cursor = mplcursors.cursor(hover=True)
+        cursor.connect(
+            "add", lambda sel: sel.annotation.set_text(f'X: {sel.target[0]:.2f}'))
         plt.show()
 
 
+    def addinteractivehovertoplot(self,df,ax,colimei, colregion, colareas, colvalues):
+        # Add interactive cursors
+        cursor = mplcursors.cursor(ax, hover=True)
+
+        # Define a function to handle the annotation for each plot
+        def create_on_add(df, colimei, colregion, colareas, colvalues):
+            def on_add(sel):
+                sel.annotation.set(text=f'imei:{df[colimei].iloc[sel.target.index]}\n'
+                                        f'region:{df[colregion].iloc[sel.target.index]}\n'
+                                        f'area:{df[colareas].iloc[sel.target.index]}\n'
+                                        f'value:{df[colvalues].iloc[sel.target.index]}')
+                sel.annotation.get_bbox_patch().set(fc="white")
+
+            return on_add
+
+        cursor.connect("add", create_on_add(df, "imei", 'region', 'areas', 'values'))
 
     def saveannotatedimagesbygrade(self,grade="B"):
         for sidename in AllPhonesSidesCVData.SIDES:

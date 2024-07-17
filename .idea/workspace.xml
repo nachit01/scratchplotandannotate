@@ -5,79 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce9c4070-f1a1-44cc-bdfc-ccd12a034b59" name="Changes" comment="good for grade B">
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/lsdsmerged/back_all_lsds_merged.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/lsdsmerged/bottom_all_lsds_merged.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/lsdsmerged/front_all_lsds_merged.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/lsdsmerged/left_all_lsds_merged.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/lsdsmerged/right_all_lsds_merged.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evo_images_CSV/lsdsmerged/top_all_lsds_merged.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CVDataAnalysisi.py" beforeDir="false" afterPath="$PROJECT_DIR$/CVDataAnalysisi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Side.py" beforeDir="false" afterPath="$PROJECT_DIR$/Side.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Bottom_annotated_test1_B.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Bottom_annotated_test2_A.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Display_annotated_test1_A.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Display_annotated_test2_B.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Housing_annotated_test1_B.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Housing_annotated_test2_A.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Left_annotated_test1_C.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Left_annotated_test2_B.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Right_annotated_test1_D.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Right_annotated_test2_C.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Top_annotated_test1_A.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/all_annotated_images/Top_annotated_test2_D.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/back_all_phones_merged.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/back_all_phones_merged.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/bottom_all_phones_merged.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/bottom_all_phones_merged.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/test1/Front.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/test1/Front.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/data/test1/Front_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/data/test1/Front_new.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/front_all_phones_merged.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/front_all_phones_merged.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/back/back_grade_A_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/back/back_grade_B_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/back/back_grade_C_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/back/back_grade_D_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/bottom/bottom_grade_A_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/bottom/bottom_grade_B_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/bottom/bottom_grade_C_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/bottom/bottom_grade_D_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/front/front_grade_A_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/front/front_grade_B_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/front/front_grade_C_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/front/front_grade_D_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/left/left_grade_A_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/left/left_grade_B_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/left/left_grade_C_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/left/left_grade_D_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/right/right_grade_A_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/right/right_grade_B_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/right/right_grade_C_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/right/right_grade_D_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/top/top_grade_A_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/top/top_grade_B_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/top/top_grade_C_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files - was for testing/top/top_grade_D_imeis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/back/back_grade_A_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/back/back_grade_A_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/back/back_grade_B_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/back/back_grade_B_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/back/back_grade_C_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/back/back_grade_C_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/bottom/bottom_grade_A_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/bottom/bottom_grade_A_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/bottom/bottom_grade_B_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/bottom/bottom_grade_B_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/bottom/bottom_grade_C_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/bottom/bottom_grade_C_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/front/front_grade_A_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/front/front_grade_A_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/front/front_grade_B_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/front/front_grade_B_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/front/front_grade_C_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/front/front_grade_C_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/left/left_grade_B_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/left/left_grade_B_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/left/left_grade_C_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/left/left_grade_C_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/manually_graded_phones - Copy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/manually_graded_phones.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/manually_graded_phones.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/right/right_grade_B_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/right/right_grade_B_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/right/right_grade_C_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/right/right_grade_C_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/right/right_grade_D_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/right/right_grade_D_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/top/top_grade_A_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/top/top_grade_A_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/top/top_grade_B_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/top/top_grade_B_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/top/top_grade_C_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/top/top_grade_C_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/top/top_grade_D_imeis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/imeis_grades_txt_files/top/top_grade_D_imeis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/left_all_phones_merged.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/left_all_phones_merged.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/right_all_phones_merged.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/right_all_phones_merged.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evo_images_CSV/top_all_phones_merged.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evo_images_CSV/top_all_phones_merged.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,13 +130,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/CVDataAnalysisi.py</url>
-          <line>242</line>
-          <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

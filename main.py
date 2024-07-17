@@ -14,11 +14,12 @@ a = AllPhonesSidesCVData()
 # a.mergeelsdstocsvfile()
 
 #plot
-# a.plotareaallsidesmergeddata()
+a.plotareaallsidesmergeddata()
 a.plotlightdeepscracthescountsallsidesbygrade()
 
 #save annotated images (flush manually)
 # a.saveannotatedimagesbygrade()
+
 
 
 print()
