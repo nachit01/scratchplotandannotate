@@ -11,7 +11,9 @@ from pathlib import Path
 class Side:
     DATAFOLDERNAME = r"data"
     AREASCOLUMNSNAMES = [f"a{i}" for i in range(1, 11)]
-    SCRATCHTYPEAREAEDGES  = [100, 1100, 2500, 5000, 7000, 9000]  # Allowed defect of area
+    # SCRATCHTYPEAREAEDGES  = [100, 1100, 2500, 5000, 7000, 9000]  # Allowed defect of area
+    SCRATCHTYPEAREAEDGES  = [10, 700, 6000, 11000, 33000]  # Allowed defect of area
+
 
 
     def __init__(self,sidename=None,rootpath=r"evo_images_CSV",sideimei=None,sidecsvfile= r"Front.csv",sideimagename = r"Display.jpg",sideregiongroup=None,manualgrade="B"):
@@ -107,9 +109,9 @@ class Side:
 
     def setscratchescount(self):
         df = self.dfsidecsvdata
-        self.sidelightscratchescount = ((df[Side.AREASCOLUMNSNAMES] >= Side.SCRATCHTYPEAREAEDGES[0]) &
-                                        (df[Side.AREASCOLUMNSNAMES] < Side.SCRATCHTYPEAREAEDGES[1])).sum().sum()#first sum for df second for series
-        self.sidedeepscratchescount  = ((df[Side.AREASCOLUMNSNAMES] >= Side.SCRATCHTYPEAREAEDGES[1])).sum().sum()
+        self.sidelightscratchescount = ((df[Side.AREASCOLUMNSNAMES] >= Side.SCRATCHTYPEAREAEDGES[1]) &
+                                        (df[Side.AREASCOLUMNSNAMES] < Side.SCRATCHTYPEAREAEDGES[2])).sum().sum()#first sum for df second for series
+        self.sidedeepscratchescount  = ((df[Side.AREASCOLUMNSNAMES] >= Side.SCRATCHTYPEAREAEDGES[2])).sum().sum()
 
 
 

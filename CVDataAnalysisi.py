@@ -10,7 +10,9 @@ import mplcursors
 
 class AllPhonesSidesCVData:
     GRADES = ["A","B","C","D"]
-    SIDES = ['front','back','left','right','top','bottom']
+    # SIDES = ['front','back','left','right','top','bottom']
+    SIDES = ['front']
+
     CSVFILENAMESBYSIDE ={"front":"Front.csv","back":"Back.csv","left":"long.csv","right":"long.csv","top":"Short.csv","bottom":"Short.csv"}
     IMAGESFILENAMESBYSIDE ={"front":"Display.jpg","back":"Housing.jpg","left":"Left.jpg","right":"Right.jpg","top":"Top.jpg","bottom":"Bottom.jpg"}
 
@@ -90,9 +92,13 @@ class AllPhonesSidesCVData:
         imeisubdirscountdict = {imei: int(pdseriessorteddirectories.str.contains(imei).sum()) for imei in imeis}
         for imei, count in imeisubdirscountdict.items():
             if count > 1:
-                sorteddirectories.remove(f"{datadirectory}\\{imei}")
+                try:
+                    sorteddirectories.remove(f"{datadirectory}\\{imei}")
+                except ValueError:
+                    pass  # Item not in the list, ignore. This happens if I copy all folders with imei-0..2 and folder imei doesn't exist
 
-                for j in range(count - 2):
+
+                for j in range(count - 1):
                     sorteddirectories.remove(f"{datadirectory}\\{imei} - {j}")
         cleanedimeis = [Path(dir).name for dir in sorteddirectories ]
         return cleanedimeis
@@ -154,6 +160,8 @@ class AllPhonesSidesCVData:
         if sides == None:
             sides = AllPhonesSidesCVData.SIDES
 
+        # fig, (ax, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+
         for side in sides:
             #read all grades merged data for side
             dfmergeddatagarde = pd.read_csv(self.wheretosavemergedsidesdict[side])
@@ -175,6 +183,17 @@ class AllPhonesSidesCVData:
             # Add interactive cursors
             self.addinteractivehovertoplot(df=sideregiondataflattnednonzeroes,ax=ax,colimei="imei", colregion='region'
                                            , colareas='areas', colvalues='values')
+
+            # # plot box
+            # # Replace NaN values with 0 in the entire DataFrame
+            # dfgradevalue = sideregiondataflattnednonzeroes[['grade','values']]
+            # dfpivot = dfgradevalue.pivot(columns='grade',values='values')
+            # # Resetting the index to flatten the DataFrame
+            # dfpivot = dfpivot.reset_index(drop=True)
+            # dfpivot.fillna(0,inplace=True)
+            # filt = dfpivot.mask(sideregiondataflattnednonzeroes == 0)
+            # dfpivot.mask(filt).boxplot(ax=ax2)
+
         # Set x and y axis limits
         # plt.xlim(0, 15000)  # Set limits for x-axis
 
@@ -236,7 +255,7 @@ class AllPhonesSidesCVData:
                 ax.scatter(subset2['dscount'], subset2['grade'],
                            label=f'Deep Scracth', marker='x', alpha=0.7,c='red')
 
-                # Plot the boxplot on the first subplot (ax1)
+                # Plot the boxplot on the first subplot (ax2)
                 dfbox2 = subset.rename(columns={"dscount": f'{label} DS'})
                 plotboxdict[f'{label} DS'] = dfbox2[f'{label} DS']
                 #ax2 params
@@ -292,7 +311,7 @@ class AllPhonesSidesCVData:
                 self.populateallphonessides()
             for i,side in enumerate(self.allsidesdict[sidename]):
                 source = side.sidecurrentimeifolder /  side.sideannotatedimagename
-                annotatedgradeimei = f"{side.sideannotatedimagename[:-4]}_{side.sideimei}_{side.manualgrade}{side.sideannotatedimagename[-4:]}"
+                annotatedgradeimei = f"{side.sideannotatedimagename[:-14]}_{side.manualgrade}_{side.sideimei}{side.sideannotatedimagename[-4:]}"
                 destination = self.rootdatapath / AllPhonesSidesCVData.PATHALLANNOTATEDIMAGES / annotatedgradeimei
                 shutil.copy2(source, destination)
 
