@@ -53,7 +53,8 @@ a.mergeelsdstocsvfile()
 # #save annotated images (flush manually)
 a.saveannotatedimagesbygrade()
 #
-plotimage(imei = "Housing_C_359646704867784 - 1.jpg")
+# plotimage(imei = "Housing_C_359646704867784 - 1.jpg")
+# plotimage(imei = "Capture.png")
 
 
 
