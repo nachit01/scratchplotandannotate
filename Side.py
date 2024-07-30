@@ -129,7 +129,7 @@ class Side:
         dfsideregions = self.dfsidecsvdata[ (self.dfsidecsvdata['region'].isin(self.sideregiongroup))]
 
         for index, row in dfsideregions.iterrows():
-            if row[f"type"] != 'Shape':
+            if row[f"type"] != 'Shape' and row[f"type"] != 'Crack':
                 boxes = [(row[f"a{i}"],row[f"x{i}"],row[f"y{i}"]) for i in range(1,11) if row[f"a{i}"] > 0 ]
                 for bx in boxes:
                     a,x,y = bx
