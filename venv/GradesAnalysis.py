@@ -8,4 +8,4 @@ class Grade:
         self.datagradespath = self.rootdatapath / gradesdtatfoldername
         self.dfdatagrades = pd.DataFrame()
 
-    def readallgradesvalues(self):
+    # def readallgradesvalues(self):

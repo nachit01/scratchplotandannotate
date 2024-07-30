@@ -36,31 +36,31 @@ def plotimage(imei):
     plt.show()
 
 
-#init
+# # #init
 a = AllPhonesSidesCVData()
-
-# #get manual grades from csv to txt
+# #
+# # #get manual grades from csv to txt
 a.createimeistxtfromcsv()
-
-# #merge data
+#
+# # #merge data
 a.mergeeachsidetoitscsvfile()
 a.mergeelsdstocsvfile()
-
-#plot
-a.plotareaallsidesmergeddata()
-a.plotlightdeepscracthescountsallsidesbygrade()
-
-#save annotated images (flush manually)
+#
+# #plot
+# # a.plotareaallsidesmergeddata()
+# # a.plotlightdeepscracthescountsallsidesbygrade()
+#
+# #save annotated images (flush manually)
 a.saveannotatedimagesbygrade()
-
-# plotimage(imei = "Display_C_358900783354714.jpg")
-
-
+#
+plotimage(imei = "Housing_C_359646704867784 - 1.jpg")
 
 
 
 
-print()
+
+
+# print(a.H1H18REGIONS)
 
 
 

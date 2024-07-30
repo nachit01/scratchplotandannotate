@@ -121,21 +121,22 @@ class Side:
         #read image
         image = cv2.imread(imagepath)
         image_copy = image.copy()
+        #might need to flip vertically if back
+        if self.sidename == 'back':
+            image_copy = cv2.flip(image_copy, 1)
 
         #filter data by its side's region
         dfsideregions = self.dfsidecsvdata[ (self.dfsidecsvdata['region'].isin(self.sideregiongroup))]
 
         for index, row in dfsideregions.iterrows():
-            boxes = [(row[f"a{i}"],row[f"x{i}"],row[f"y{i}"]) for i in range(1,11) if row[f"a{i}"] > 0 ]
-            for bx in boxes:
-                a,x,y = bx
-                x=float(x)
-                y = float(y)
-                a = float(a)
-
-
-
-                utils.AnnotateOnImage(image_copy,top_left=(x/scale,y/scale),area=a)
+            if row[f"type"] != 'Shape':
+                boxes = [(row[f"a{i}"],row[f"x{i}"],row[f"y{i}"]) for i in range(1,11) if row[f"a{i}"] > 0 ]
+                for bx in boxes:
+                    a,x,y = bx
+                    x=float(x)
+                    y = float(y)
+                    a = float(a)
+                    utils.AnnotateOnImage(image_copy,top_left=(x/scale,y/scale),area=a)
         cv2.imwrite(self.sidecurrentimeifolder / self.sideannotatedimagename, image_copy)
 
     def showannotatedside(self):

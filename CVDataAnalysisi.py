@@ -11,18 +11,19 @@ import mplcursors
 class AllPhonesSidesCVData:
     GRADES = ["A","B","C","D"]
     # SIDES = ['front','back','left','right','top','bottom']
-    SIDES = ['front']
+    SIDES = ['back']
 
     CSVFILENAMESBYSIDE ={"front":"Front.csv","back":"Back.csv","left":"long.csv","right":"long.csv","top":"Short.csv","bottom":"Short.csv"}
     IMAGESFILENAMESBYSIDE ={"front":"Display.jpg","back":"Housing.jpg","left":"Left.jpg","right":"Right.jpg","top":"Top.jpg","bottom":"Bottom.jpg"}
 
     D1D9REGIONS = [f"D{i}" for i in range(1, 10)]  # front
-    H1H9REGIONS = [f"H{i}" for i in range(1, 10)]  # back
+    H1H18REGIONS = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8', 'H9',
+                   'H10','H11','All Edges','Camera Edges','H12','H15 Logo','H18 cam area'] # back
     L1L7REGIONS = ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7 Left SIM']  # left
     R1R5REGIONS = [f"R{i}" for i in range(1, 6)]  # right
     T1R4REGIONS = [f"T{i}" for i in range(1, 5)]  # top
     B1B3REGIONS = [f"B{i}" for i in range(1, 4)]  # bottom
-    REGIONGROUPSDICT ={"front":D1D9REGIONS,"back":H1H9REGIONS,"left":L1L7REGIONS,"right":R1R5REGIONS,"top":T1R4REGIONS,
+    REGIONGROUPSDICT ={"front":D1D9REGIONS,"back":H1H18REGIONS, "left":L1L7REGIONS, "right":R1R5REGIONS, "top":T1R4REGIONS,
                        "bottom":B1B3REGIONS}
     PATHALLANNOTATEDIMAGES = Path(r"all_annotated_images")
     PATHMANUALLYGRADEDCSV = Path(r"manually_graded_phones.csv")
