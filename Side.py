@@ -137,7 +137,7 @@ class Side:
                     y = float(y)
                     a = float(a)
                     utils.AnnotateOnImage(image_copy,top_left=(x/scale,y/scale),area=a)
-        if self.sidename == 'back':
+        if self.sidename != 'front':
             image_copy = cv2.flip(image_copy, 1)
         cv2.imwrite(self.sidecurrentimeifolder / self.sideannotatedimagename, image_copy)
 
