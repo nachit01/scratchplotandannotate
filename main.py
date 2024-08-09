@@ -5,24 +5,24 @@ from GradesAnalysis import Grade
 import os
 
 
-# # #init
-a = AllPhonesSidesCVData()
+# # # #init
+# a = AllPhonesSidesCVData()
+# # #
+# # # #get manual grades from csv to txt
+# a.createimeistxtfromcsv()
 # #
-# # #get manual grades from csv to txt
-a.createimeistxtfromcsv()
-#
-# # #merge data
-a.mergeeachsidetoitscsvfile()
-a.mergeelsdstocsvfile()
-#
-# #save annotated images (flush manually)
-a.saveannotatedimagesbygrade()
-#
-# #plot
-# a.plotareaallsidesmergeddata()
-# a.plotlightdeepscracthescountsallsidesbygrade()
-#
-# # a.plotimage(imagename = "Housing_C_359646709836321 - 1.jpg")
+# # # #merge data
+# a.mergeeachsidetoitscsvfile()
+# a.mergeelsdstocsvfile()
+# #
+# # #save annotated images (flush manually)
+# a.saveannotatedimagesbygrade()
+# #
+# # #plot
+# # a.plotareaallsidesmergeddata()
+# # a.plotlightdeepscracthescountsallsidesbygrade()
+# #
+# # # a.plotimage(imagename = "Housing_C_359646709836321 - 1.jpg")
 
 
 ######################

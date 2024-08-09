@@ -11,6 +11,7 @@ import mplcursors
 class AllPhonesSidesCVData:
     GRADES = ["A","B","C","D"]
     SIDES = ['front','back','left','right','top','bottom']
+    # SIDES = ['bottom']
 
     CSVFILENAMESBYSIDE ={"front":"Front.csv","back":"Back.csv","left":"long.csv","right":"long.csv","top":"Short.csv","bottom":"Short.csv"}
     IMAGESFILENAMESBYSIDE ={"front":"Display.jpg","back":"Housing.jpg","left":"Left.jpg","right":"Right.jpg","top":"Top.jpg","bottom":"Bottom.jpg"}

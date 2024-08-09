@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from CVDataAnalysisi import AllPhonesSidesCVData
 import os
+import numpy as np
 
 
 class Grade:
@@ -134,15 +135,26 @@ class Grade:
             filt = (dfevovsman[gradeevo] != dfevovsman[grademan])
             print(dfevovsman[grademan].iloc[1])
             print(dfevovsman[gradeevo].iloc[1])
-            sidemismatch = dfevovsman[filt]
+            sidemismatch = dfevovsman[filt].reset_index()
+
+            #sort by grade so that plot will be A,B,C,D
+            # Sort by the 'grade evo not man' column
+            dfsorted = sidemismatch.sort_values(by=[gradeevo])
+
+            #add some noise to distinguish similar values when plotting
+            # Add random noise to the DataFrame
+            noise_x = np.random.normal(-2, 2, sidemismatch[valuecolumn].shape)  # Mean=0, Std=0.5
+            dfsortednoisy = dfsorted.copy()
+            dfsortednoisy[valuecolumn] += noise_x
 
             # plot
-            ax = sidemismatch.plot(kind="scatter", x=valuecolumn, y=gradeevo, grid=True, legend=True, c='blue',
-                                   s=50)
+            ax = dfsortednoisy.plot(kind="scatter", x=valuecolumn, y=gradeevo, grid=True, legend=True, c='blue',
+                                   s=50,alpha=0.5)
             plt.title(f"Side Grade Mismatch:{side}")
+            plt.ylabel(f"EVO-{gradeevo}")
 
-            # Add interactive cursors
-            self.addinteractivemismatch(df=sidemismatch, ax=ax, colimei="SCANNED ID", colvalues=valuecolumn,
+            # Add interactive cursors / keep non noisy values for annotation
+            self.addinteractivemismatch(df=dfsorted, ax=ax, colimei="SCANNED ID", colvalues=valuecolumn,
                                         colgrade=gradeevo, colmangrade=grademan, side=side)
         plt.grid(True)
         plt.show()
