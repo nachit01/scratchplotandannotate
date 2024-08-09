@@ -52,6 +52,9 @@ class AllPhonesSidesCVData:
 
     def populateallphonessides(self):
 
+        #update phones list from csv file
+        self.createimeistxtfromcsv()
+
         for side in AllPhonesSidesCVData.SIDES:
             for grade in AllPhonesSidesCVData.GRADES:
                 bysidebygradetxtimeispath = self.txtmanualgradingfiles / side / f"{side}_grade_{grade}_imeis.txt"
@@ -86,7 +89,9 @@ class AllPhonesSidesCVData:
 
         # Sort directories by last modified time
         sorteddirectories = sorted(subdirs, key=lambda x: os.path.getmtime(x), reverse=True)
-        sorteddirectories = [str(dir) for dir in sorteddirectories]  # convert from WindowsPAth to str
+        # convert from WindowsPAth to str
+        sorteddirectories = [str(dir) for dir in sorteddirectories]
+
         # remove multiple runs. keep latest
         pdseriessorteddirectories = pd.Series(sorteddirectories)
         imeisubdirscountdict = {imei: int(pdseriessorteddirectories.str.contains(imei).sum()) for imei in imeis}
@@ -98,7 +103,7 @@ class AllPhonesSidesCVData:
                     pass  # Item not in the list, ignore. This happens if I copy all folders with imei-0..2 and folder imei doesn't exist
 
 
-                for j in range(count - 1):
+                for j in range(count - 2):
                     sorteddirectories.remove(f"{datadirectory}\\{imei} - {j}")
         cleanedimeis = [Path(dir).name for dir in sorteddirectories ]
         return cleanedimeis

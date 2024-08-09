@@ -2,7 +2,7 @@ import GradesAnalysis
 from Side import Side
 from CVDataAnalysisi import AllPhonesSidesCVData
 from GradesAnalysis import Grade
-
+import os
 
 
 # # #init
@@ -19,8 +19,8 @@ a.mergeelsdstocsvfile()
 a.saveannotatedimagesbygrade()
 #
 # #plot
-a.plotareaallsidesmergeddata()
-a.plotlightdeepscracthescountsallsidesbygrade()
+# a.plotareaallsidesmergeddata()
+# a.plotlightdeepscracthescountsallsidesbygrade()
 #
 # # a.plotimage(imagename = "Housing_C_359646709836321 - 1.jpg")
 
@@ -28,16 +28,14 @@ a.plotlightdeepscracthescountsallsidesbygrade()
 ######################
 #######--GRADES--#########
 grades = Grade()
-#read grad files
+#read grade files
 grades.readallgradesvalues()
 #plot
-grades.pltogradesbyside()
+# grades.pltogradesbyside()
 #insert manual into evo grade csv
 grades.evovsmanualgradescsv()
 #mismatch
 grades.plotmismatches()
-
-
 
 
 

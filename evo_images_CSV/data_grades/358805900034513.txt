@@ -7,19 +7,19 @@ SCANNED ID: 358805900034513
 MODEL: iPhone 13 Pro Max
 COLOR: GRAPHITE
 
-Front Value: 90
-Front Grade: B
-Back Value: 50
+Front Value: 20
+Front Grade: A
+Back Value: 55
 Back Grade: B
-Left Value: 75
+Left Value: 80
 Left Grade: C
 Right Value: 80
 Right Grade: C
 Top Value: 75
 Top Grade: C
-Bottom Value: 55
+Bottom Value: 65
 Bottom Grade: B
-Final Value: 425
+Final Value: 375
 Final Grade: C
 
 

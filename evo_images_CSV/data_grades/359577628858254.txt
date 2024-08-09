@@ -8,18 +8,18 @@ MODEL: iPhone 13 Pro Max
 COLOR: Blue
 
 Front Value: 3425
-Front Grade: C
-Back Value: 915
-Back Grade: C
-Left Value: 40
-Left Grade: B
+Front Grade: D
+Back Value: 795
+Back Grade: D
+Left Value: 80
+Left Grade: C
 Right Value: 75
 Right Grade: C
-Top Value: 10
-Top Grade: A
+Top Value: 30
+Top Grade: B
 Bottom Value: 75
 Bottom Grade: C
-Final Value: 4540
-Final Grade: C
+Final Value: 4480
+Final Grade: D
 
 

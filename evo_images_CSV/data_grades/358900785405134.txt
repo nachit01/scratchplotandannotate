@@ -7,19 +7,19 @@ SCANNED ID: 358900785405134
 MODEL: iPhone 13 Pro Max
 COLOR: Blue
 
-Front Value: 2405
-Front Grade: C
-Back Value: 13565
-Back Grade: C
-Left Value: 80
+Front Value: 10
+Front Grade: A
+Back Value: 40
+Back Grade: B
+Left Value: 90
 Left Grade: C
-Right Value: 75
+Right Value: 80
 Right Grade: C
-Top Value: 75
-Top Grade: C
-Bottom Value: 70
-Bottom Grade: B
-Final Value: 16270
+Top Value: 55
+Top Grade: B
+Bottom Value: 80
+Bottom Grade: C
+Final Value: 355
 Final Grade: C
 
 

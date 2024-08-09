@@ -1,0 +1,25 @@
+
+
+COMMUNICATIONS TEST DESIGN INC.
+
+EVO3 Grade Data:
+SCANNED ID: 351884709746988
+MODEL: iPhone 13 Pro Max
+COLOR: GOLD
+
+Front Value: 2105
+Front Grade: D
+Back Value: 95
+Back Grade: B
+Left Value: 80
+Left Grade: C
+Right Value: 80
+Right Grade: C
+Top Value: 35
+Top Grade: B
+Bottom Value: 75
+Bottom Grade: C
+Final Value: 2470
+Final Grade: D
+
+
